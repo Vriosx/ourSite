@@ -11,29 +11,34 @@
   <style>
     body {
       background: linear-gradient(135deg, #fce4ec, #f8bbd0);
-      min-height: 100vh;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+
     .fotos-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
     }
+
     .fotos-grid img {
       width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
       border-radius: 16px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      object-fit: cover;
-      height: 180px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .fotos-grid img:hover {
       transform: scale(1.03);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     }
+
     .heart-beat {
       animation: heartbeat 1.5s ease-in-out infinite;
     }
+
     @keyframes heartbeat {
       0% { transform: scale(1); }
       25% { transform: scale(1.1); }
@@ -43,59 +48,60 @@
     }
   </style>
 </head>
-<body class="p-6 flex flex-col items-center">
+<body class="px-4 sm:px-6 py-6 flex flex-col items-center">
 
-  <header class="mb-10 text-center">
-    <h1 class="text-5xl font-extrabold text-pink-700 mb-2 select-none">
+  <header class="mb-10 text-center px-2">
+    <h1 class="text-3xl sm:text-5xl font-extrabold text-pink-700 mb-2 select-none">
       <span class="heart-beat inline-block">💖</span> Álbum do Nosso Amor <span class="heart-beat inline-block">💖</span>
     </h1>
-    <p class="text-lg text-pink-800 italic">Para sempre estar a salvo</p>
+    <p class="text-base sm:text-lg text-pink-800 italic">Para sempre estar a salvo</p>
   </header>
 
-  <section class="mb-12 w-full max-w-2xl bg-white/90 rounded-2xl shadow-xl p-6">
-    <h2 class="text-2xl font-semibold mb-4 text-pink-600 text-center">
+  <section class="mb-10 w-full max-w-2xl bg-white/90 rounded-2xl shadow-xl p-4 sm:p-6">
+    <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-pink-600 text-center">
       <i class="fab fa-spotify text-green-500 mr-2"></i>Nossa Trilha Sonora
     </h2>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/0WlHXiEeRx4XdWTM1ZmBHk?utm_source=generator" 
-      width="100%" height="352" frameBorder="0" 
-      allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy" class="shadow-lg">
-    </iframe>
+    <div class="w-full aspect-[4/3] sm:aspect-[16/9] rounded-xl overflow-hidden shadow-lg">
+      <iframe 
+        src="https://open.spotify.com/embed/playlist/0WlHXiEeRx4XdWTM1ZmBHk?utm_source=generator"
+        width="100%" height="100%" frameBorder="0" allowfullscreen 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy">
+      </iframe>
+    </div>
   </section>
 
-  <section class="mb-12 w-full max-w-4xl bg-white/90 rounded-2xl shadow-xl p-6">
-    <h2 class="text-2xl font-semibold mb-4 text-pink-600 text-center">
+  <section class="mb-10 w-full max-w-4xl bg-white/90 rounded-2xl shadow-xl p-4 sm:p-6">
+    <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-pink-600 text-center">
       <i class="fas fa-map-marked-alt text-red-400 mr-2"></i>Nossos Destinos
     </h2>
-    <div class="aspect-w-16 aspect-h-9 mb-4 rounded-xl overflow-hidden shadow-lg">
+    <div class="aspect-[4/3] sm:aspect-[16/9] mb-4 rounded-xl overflow-hidden shadow-lg">
       <iframe 
         src="https://www.google.com/maps/d/embed?mid=1fVtFoeRoIkPf0XwEfhFia99qwOJEveA&ehbc=2E312F" 
-        width="100%" 
-        height="480"
-        allowfullscreen>
+        width="100%" height="100%" allowfullscreen>
       </iframe>
     </div>
     <div class="text-center mt-4">
       <a href="https://www.google.com/maps/d/edit?mid=1fVtFoeRoIkPf0XwEfhFia99qwOJEveA" 
          target="_blank"
-         class="inline-flex items-center px-6 py-3 bg-pink-500 text-white rounded-full font-semibold hover:bg-pink-600 transition">
+         class="inline-flex items-center px-5 py-2 bg-pink-500 text-white rounded-full font-semibold hover:bg-pink-600 transition">
         <i class="fas fa-edit mr-2"></i> Editar nosso mapa juntos
       </a>
     </div>
   </section>
 
-  <section class="w-full max-w-4xl bg-white/90 rounded-2xl shadow-xl p-6 mb-10">
-    <h2 class="text-2xl font-semibold mb-6 text-pink-600 text-center">
+  <section class="w-full max-w-4xl bg-white/90 rounded-2xl shadow-xl p-4 sm:p-6 mb-10">
+    <h2 class="text-xl sm:text-2xl font-semibold mb-6 text-pink-600 text-center">
       <i class="fas fa-camera-retro text-blue-400 mr-2"></i>Nossos Momentos Especiais
     </h2>
-    
+
     <div class="text-center mb-8">
       <a href="https://photos.app.goo.gl/wHa4vospxo5Nf2Z9A" 
          target="_blank" 
-         class="inline-flex items-center px-6 py-3 bg-pink-500 text-white rounded-full font-semibold hover:bg-pink-600 transition mb-6">
+         class="inline-flex items-center px-6 py-2 sm:py-3 bg-pink-500 text-white rounded-full font-semibold hover:bg-pink-600 transition mb-6">
         <i class="fas fa-images mr-2"></i> Nosso álbum completo
       </a>
-      
+
       <div class="fotos-grid">
         <img src="Foto1.jpg" alt="Momento especial 1">
         <img src="Foto2.jpg" alt="Momento especial 2">
@@ -107,9 +113,9 @@
     </div>
   </section>
 
-  <footer class="text-center text-pink-700 mt-4">
+  <footer class="text-center text-pink-700 mt-4 mb-6 text-sm">
     <p>Feito com <i class="fas fa-heart text-red-500"></i> para eternizar nosso amor</p>
-    <p class="text-sm mt-2">Atualizado em <span id="current-date"></span></p>
+    <p class="mt-1">Atualizado em <span id="current-date"></span></p>
   </footer>
 
   <script>
@@ -118,9 +124,6 @@
       month: 'long',
       year: 'numeric'
     });
-    
-    const title = document.querySelector('header h1');
-    title.classList.add('animate-typing', 'overflow-hidden', 'whitespace-nowrap', 'border-r-4', 'border-r-pink-600');
   </script>
 </body>
 </html>
